@@ -183,6 +183,7 @@
   <button class="primary" id="btnPrompt" title="Copies instructions describing the input format — paste into any AI chat">Copy AI prompt</button>
   <button id="btnHelp">Format help</button>
   <button id="btnExample">Load example</button>
+  <button id="btnSave">Save</button>
   <button id="btnLibrary">My circuits</button>
   <button id="btnClear">Clear</button>
   <div class="spacer"></div>
@@ -958,6 +959,7 @@ function renderTable(wireMeta) {
 
 /* ---------------- app wiring ---------------- */
 
+let currentCircuitId = null;   // which saved circuit the editor is currently editing
 const editor = document.getElementById('editor');
 const canvasWrap = document.getElementById('canvasWrap');
 const tableWrap = document.getElementById('tableWrap');
@@ -1114,6 +1116,7 @@ document.getElementById('btnExample').addEventListener('click', () => {
   if (editor.value.trim() && editor.value !== EXAMPLE &&
       !confirm('Replace the current text with the example?')) return;
   editor.value = EXAMPLE;
+  currentCircuitId = null;
   update();
 });
 
@@ -1134,6 +1137,7 @@ async function copyText(text) {
 
 document.getElementById('btnClear').addEventListener('click', () => {
   editor.value = '';
+  currentCircuitId = null;
   update();
   editor.focus();
 });
@@ -1409,9 +1413,10 @@ document.getElementById('copyFallback').addEventListener('click', e => {
     const existing = library.circuits.find(c => c.name.toLowerCase() === name.toLowerCase());
     if (existing) {
       if (!confirm(`Update the saved circuit "${existing.name}"?`)) return;
-      existing.text = text; existing.updated = now;
+      existing.text = text; existing.updated = now; currentCircuitId = existing.id;
     } else {
-      library.circuits.push({ id: 'c' + now + Math.random().toString(36).slice(2, 6), name, text, updated: now });
+      const nc = { id: 'c' + now + Math.random().toString(36).slice(2, 6), name, text, updated: now };
+      library.circuits.push(nc); currentCircuitId = nc.id;
     }
     library.updated = now; nameEl.value = '';
     saveLocal(); renderList(); schedulePush();
@@ -1420,8 +1425,35 @@ document.getElementById('copyFallback').addEventListener('click', e => {
   function loadCircuit(id) {
     const c = library.circuits.find(c => c.id === id);
     if (!c) return;
-    editor.value = c.text; update();
+    editor.value = c.text; currentCircuitId = c.id; update();
     document.getElementById('library').classList.remove('open');
+  }
+
+  // toolbar Save: update the circuit you're editing, or name a new one
+  function quickSave() {
+    const text = editor.value;
+    if (!text.trim()) { showToast('Nothing to save — the editor is empty'); return; }
+    const now = Date.now();
+    const cur = currentCircuitId && library.circuits.find(c => c.id === currentCircuitId);
+    if (cur) {
+      cur.text = text; cur.updated = library.updated = now;
+      saveLocal(); renderList(); schedulePush();
+      showToast(`Saved "${cur.name}"`);
+      return;
+    }
+    let name = prompt('Name this circuit:', '');
+    if (name === null) return;
+    name = name.trim() || ('Circuit ' + (library.circuits.length + 1));
+    const existing = library.circuits.find(c => c.name.toLowerCase() === name.toLowerCase());
+    if (existing) {
+      if (!confirm(`Update the saved circuit "${existing.name}"?`)) return;
+      existing.text = text; existing.updated = now; currentCircuitId = existing.id;
+    } else {
+      const nc = { id: 'c' + now + Math.random().toString(36).slice(2, 6), name, text, updated: now };
+      library.circuits.push(nc); currentCircuitId = nc.id;
+    }
+    library.updated = now; saveLocal(); renderList(); schedulePush();
+    showToast(`Saved "${name}"`);
   }
   function renameCircuit(id) {
     const c = library.circuits.find(c => c.id === id); if (!c) return;
@@ -1432,6 +1464,7 @@ document.getElementById('copyFallback').addEventListener('click', e => {
   function deleteCircuit(id) {
     const c = library.circuits.find(c => c.id === id); if (!c) return;
     if (!confirm(`Delete "${c.name}"? This can't be undone.`)) return;
+    if (currentCircuitId === id) currentCircuitId = null;
     library.circuits = library.circuits.filter(c => c.id !== id);
     library.updated = Date.now();
     saveLocal(); renderList(); schedulePush();
@@ -1455,6 +1488,7 @@ document.getElementById('copyFallback').addEventListener('click', e => {
   document.getElementById('btnLibrary').addEventListener('click', () => { renderList(); modal.classList.add('open'); });
   document.getElementById('libClose').addEventListener('click', () => modal.classList.remove('open'));
   modal.addEventListener('click', e => { if (e.target.id === 'library') modal.classList.remove('open'); });
+  document.getElementById('btnSave').addEventListener('click', quickSave);
   document.getElementById('saveCircuit').addEventListener('click', saveCurrent);
   document.getElementById('circName').addEventListener('keydown', e => { if (e.key === 'Enter') saveCurrent(); });
   document.getElementById('circList').addEventListener('click', e => {
