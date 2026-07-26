@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="WireUp">
+<meta name="theme-color" content="#1c7ed6">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>WireUp — wiring diagram generator</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzFjN2VkNiIvPjxwYXRoIGQ9Ik03IDExIEgxNiBWMjEgSDI1IiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMi42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48Y2lyY2xlIGN4PSI3IiBjeT0iMTEiIHI9IjMiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSIyNSIgY3k9IjIxIiByPSIzIiBmaWxsPSIjZmZmIi8+PC9zdmc+">
+
+<style>
+  :root {
+    --bg: #f4f5f7;
+    --panel: #ffffff;
+    --border: #d9dce1;
+    --text: #24292e;
+    --muted: #6a737d;
+    --accent: #1c7ed6;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text);
+    display: flex; flex-direction: column;
+  }
+  header {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+  }
+  header h1 { font-size: 16px; margin: 0 8px 0 0; }
+  header h1 span { color: var(--muted); font-weight: 400; font-size: 13px; margin-left: 8px; }
+  button {
+    font: inherit; font-size: 13px; padding: 6px 12px; border-radius: 6px;
+    border: 1px solid var(--border); background: #fff; color: var(--text); cursor: pointer;
+  }
+  button:hover { background: #f0f3f6; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  button.primary:hover { background: #1971c2; }
+  #toast {
+    position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+    background: #24292e; color: #fff; padding: 8px 16px; border-radius: 6px;
+    font-size: 13px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 50;
+  }
+  #toast.show { opacity: 1; }
+  main { flex: 1; display: flex; min-height: 0; }
+  #left {
+    width: 420px; min-width: 280px; max-width: 60vw;
+    display: flex; flex-direction: column; border-right: 1px solid var(--border);
+    background: var(--panel);
+  }
+  #editor {
+    flex: 1; resize: none; border: 0; outline: none; padding: 12px 14px;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    color: var(--text); background: var(--panel); white-space: pre; tab-size: 2;
+  }
+  #errors { max-height: 30%; overflow: auto; border-top: 1px solid var(--border); }
+  #errors:empty { display: none; }
+  .err {
+    padding: 6px 14px; font-size: 12.5px; color: #b02a37;
+    border-bottom: 1px solid #f1d4d7; background: #fdf3f4;
+  }
+  #right { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  #canvasWrap {
+    flex: 1; overflow: hidden; padding: 0; background: #ffffff;
+    position: relative; cursor: grab;
+    touch-action: none; overscroll-behavior: none;
+  }
+  #canvasWrap.panning { cursor: grabbing; }
+  #canvasWrap > svg { display: block; position: absolute; top: 0; left: 0; transform-origin: 0 0; will-change: transform; }
+  #canvasWrap g.part { cursor: pointer; }
+  #canvasWrap .pinhit { cursor: pointer; }
+  #canvasWrap g.part, #canvasWrap g.wire, #canvasWrap .junction { transition: opacity .12s ease; }
+  #canvasWrap > p { padding: 18px; }
+  #zoomCtl {
+    position: absolute; right: 14px; bottom: 14px; z-index: 6;
+    display: flex; flex-direction: column; gap: 1px;
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,.08); user-select: none;
+  }
+  #zoomCtl button {
+    width: 34px; height: 32px; border: none; border-radius: 0; background: var(--panel);
+    font-size: 17px; line-height: 1; color: var(--text); padding: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  #zoomCtl button + button { border-top: 1px solid var(--border); }
+  #zoomCtl button:hover { background: #eef2f6; color: var(--accent); }
+  #zoomCtl button svg { width: 17px; height: 17px; }
+  #zoomPct {
+    height: 26px; font-size: 11px; color: var(--muted); border-top: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; cursor: default;
+  }
+  #tableDrag {
+    height: 7px; flex: 0 0 7px; cursor: row-resize; background: var(--panel);
+    border-top: 1px solid var(--border); position: relative;
+  }
+  #tableDrag::after {
+    content: ""; position: absolute; left: 50%; top: 2px; transform: translateX(-50%);
+    width: 44px; height: 3px; border-radius: 2px; background: #c6ccd2;
+  }
+  #tableDrag:hover::after { background: var(--accent); }
+  #tableWrap { height: 30%; flex: 0 0 auto; overflow: auto; background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th, td { text-align: left; padding: 5px 12px; border-bottom: 1px solid #eceff2; white-space: nowrap; }
+  th { position: sticky; top: 0; background: #f7f8fa; color: var(--muted); font-weight: 600; }
+  td.note { white-space: normal; color: var(--muted); }
+  tr.wireRow { cursor: default; }
+  tr.wireRow:hover, tr.wireRow.hot { background: #eef4fb; }
+  .swatch {
+    display: inline-block; width: 22px; height: 10px; border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.25); vertical-align: middle; margin-right: 7px;
+  }
+  #help, .modal {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 40;
+    align-items: center; justify-content: center;
+  }
+  #help.open, .modal.open { display: flex; }
+  .modalBox {
+    background: var(--panel); border-radius: 10px; max-width: 640px; width: 92%;
+    max-height: 84vh; overflow: auto; padding: 22px 26px; box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  }
+  #helpBox {
+    background: var(--panel); border-radius: 10px; max-width: 760px; width: 92%;
+    max-height: 84vh; overflow: auto; padding: 22px 26px; box-shadow: 0 12px 40px rgba(0,0,0,.25);
+  }
+  #helpBox h2 { margin-top: 0; font-size: 17px; }
+  #helpBox h3 { font-size: 14px; margin-bottom: 6px; }
+  #helpBox pre {
+    background: #f6f8fa; border: 1px solid var(--border); border-radius: 6px;
+    padding: 12px; font-size: 12.5px; overflow: auto;
+  }
+  #helpBox p, #helpBox li { font-size: 13.5px; line-height: 1.55; }
+  .spacer { flex: 1; }
+  #stats { font-size: 12.5px; color: var(--muted); }
+  #dragbar { width: 5px; cursor: col-resize; background: transparent; margin-left: -5px; z-index: 5; }
+  #btnPanel {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 5px 7px; color: var(--muted); border: none; background: none;
+  }
+  #btnPanel:hover { background: #eef2f6; color: var(--text); border-radius: 6px; }
+  body.codeHidden #left, body.codeHidden #dragbar { display: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <button id="btnPanel" title="Show / hide the code panel">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><line x1="9.5" y1="4" x2="9.5" y2="20"/></svg>
+  </button>
+  <h1>WireUp<span>text in → wiring diagram out</span></h1>
+  <button class="primary" id="btnPrompt" title="Copies instructions describing the input format — paste into any AI chat">Copy AI prompt</button>
+  <button id="btnHelp">Format help</button>
+  <button id="btnExample">Load example</button>
+  <button id="btnClear">Clear</button>
+  <div class="spacer"></div>
+  <span id="stats"></span>
+  <button id="btnSvg">Export SVG</button>
+  <button id="btnPng">Export PNG</button>
+</header>
+
+<main>
+  <div id="left">
+    <textarea id="editor" spellcheck="false" placeholder="Paste your circuit description here…"></textarea>
+    <div id="errors"></div>
+  </div>
+  <div id="dragbar"></div>
+  <div id="right">
+    <div id="canvasWrap">
+      <div id="zoomCtl">
+        <button id="zoomIn" title="Zoom in">+</button>
+        <button id="zoomOut" title="Zoom out">−</button>
+        <button id="zoomFit" title="Fit to view">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>
+        </button>
+        <div id="zoomPct" title="Current zoom">100%</div>
+      </div>
+    </div>
+    <div id="tableDrag" title="Drag to resize the wiring table — drag to the bottom to hide it"></div>
+    <div id="tableWrap"></div>
+  </div>
+</main>
+
+<div id="toast"></div>
+
+<div id="copyFallback" class="modal">
+  <div class="modalBox">
+    <h2 style="margin-top:0;font-size:16px">Copy the AI prompt</h2>
+    <p style="font-size:13.5px">Automatic copying is blocked here — the text below is already selected, so just press <b>⌘C</b> (or <b>Ctrl+C</b>), then paste it into your AI chat.</p>
+    <textarea id="copyFallbackText" readonly spellcheck="false"
+      style="width:100%;height:220px;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--border);border-radius:6px;padding:10px;resize:vertical"></textarea>
+    <p style="text-align:right;margin-bottom:0"><button class="primary" onclick="document.getElementById('copyFallback').classList.remove('open')">Done</button></p>
+  </div>
+</div>
+
+<div id="help">
+  <div id="helpBox">
+    <h2>Input format</h2>
+    <p>One wire per line: <code>partId.PIN -&gt; partId.PIN</code>. That's the only thing that's required —
+    parts are created automatically from the wires. Declaring parts is optional but gives nicer names and pin order.</p>
+    <pre id="helpSpec"></pre>
+    <h3>Built-in boards &amp; driver modules</h3>
+    <p>Declare a part with one of these display names (e.g. <code>part mcu "XIAO ESP32C3"</code>, no <code>pins:</code> line)
+    and WireUp draws its full real pinout, with unused pins dimmed. Pins can be referenced by printed label
+    or GPIO name (<code>mcu.D4</code> and <code>mcu.GPIO6</code> both work):</p>
+    <ul id="helpBoards"></ul>
+    <p style="color:var(--muted);font-size:12.5px">Stepper drivers share the StepStick pin layout; clones vary on the small config-pin
+    silkscreen, so check yours against the board in your hand.</p>
+    <h3>Tips</h3>
+    <ul>
+      <li>Power pins (VCC, 3V3, 5V, VIN…) are automatically drawn red, ground pins black. Other wires get distinct colors, or force one with <code>[green]</code> / <code>[#ff8800]</code>.</li>
+      <li>Add a note in quotes at the end of a wire line — it shows in the wiring table and on hover.</li>
+      <li>The part with the most connections becomes the "hub" (drawn in the middle); peripherals go on whichever side their pins are.</li>
+      <li>Use <code>left:</code> / <code>right:</code> instead of <code>pins:</code> to force which side of a box the pins appear on, and <code>board: pico</code> inside a part block to force a board pinout regardless of the name.</li>
+    </ul>
+    <p style="text-align:right"><button id="btnHelpClose" class="primary">Close</button></p>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+/* ---------------- constants ---------------- */
+
+const PIN_H = 22, HEADER_H = 38, PAD_TOP = 6, PAD_BOTTOM = 10, STUB = 14;
+const GAP_X = 250, GAP_Y = 28, MARGIN = 26;
+const FONT = 'Helvetica, Arial, sans-serif';
+
+const POWER_RE = /^(vcc|vdd|vin|vbus|vsys|vbat|raw|bat\+?|pwr|power|3v3|3\.3v|5v|v5|12v|\+5v|\+3\.3v|\+12v)$/i;
+const GND_RE = /^(gnd|agnd|dgnd|pgnd|ground|0v|vss|com)$/i;
+
+const PALETTE = ['#e8a013','#2f9e44','#1c7ed6','#f76707','#9c36b5','#0ca678','#e64980','#845ef7','#5f6b1f','#0b7285'];
+const NAMED_COLORS = {
+  red:'#d02b2b', black:'#24292e', yellow:'#e8a013', green:'#2f9e44', blue:'#1c7ed6',
+  orange:'#f76707', purple:'#9c36b5', violet:'#9c36b5', brown:'#795548', white:'#b0b6bc',
+  gray:'#868e96', grey:'#868e96', pink:'#e64980', cyan:'#0ca678', teal:'#0b7285'
+};
+
+/* ---------------- board database ----------------
+   Pins are listed top-to-bottom per side, in their physical positions
+   (board viewed from above, USB/antenna end at the top).
+   Each pin: [printed label, ...aliases]. Labels are what matters —
+   wires can reference any alias. */
+
+const BOARDS = [
+  { id:'xiao-esp32c3', name:'XIAO ESP32C3',
+    match:['xiaoesp32c3','seeedxiaoesp32c3','seeedstudioxiaoesp32c3','xiaoc3'],
+    left:[['D0','GPIO2','IO2','A0'],['D1','GPIO3','IO3','A1'],['D2','GPIO4','IO4','A2'],
+          ['D3','GPIO5','IO5','A3'],['D4','GPIO6','IO6','SDA'],['D5','GPIO7','IO7','SCL'],
+          ['D6','GPIO21','IO21','TX']],
+    right:[['5V'],['GND'],['3V3','3.3V'],['D10','GPIO10','IO10','MOSI'],
+           ['D9','GPIO9','IO9','MISO'],['D8','GPIO8','IO8','SCK'],['D7','GPIO20','IO20','RX']] },
+
+  { id:'xiao-esp32s3', name:'XIAO ESP32S3',
+    match:['xiaoesp32s3','seeedxiaoesp32s3','xiaoesp32s3sense','xiaos3'],
+    left:[['D0','GPIO1','IO1','A0'],['D1','GPIO2','IO2','A1'],['D2','GPIO3','IO3','A2'],
+          ['D3','GPIO4','IO4','A3'],['D4','GPIO5','IO5','SDA'],['D5','GPIO6','IO6','SCL'],
+          ['D6','GPIO43','IO43','TX']],
+    right:[['5V'],['GND'],['3V3','3.3V'],['D10','GPIO9','IO9','MOSI'],
+           ['D9','GPIO8','IO8','MISO'],['D8','GPIO7','IO7','SCK'],['D7','GPIO44','IO44','RX']] },
+
+  { id:'pico', name:'Raspberry Pi Pico',
+    match:['pico','raspberrypipico','picow','raspberrypipicow','pico2','raspberrypipico2','pico2w'],
+    left:[['GP0','GPIO0'],['GP1','GPIO1'],['GND'],['GP2','GPIO2'],['GP3','GPIO3'],
+          ['GP4','GPIO4','SDA'],['GP5','GPIO5','SCL'],['GND'],['GP6','GPIO6'],['GP7','GPIO7'],
+          ['GP8','GPIO8'],['GP9','GPIO9'],['GND'],['GP10','GPIO10'],['GP11','GPIO11'],
+          ['GP12','GPIO12'],['GP13','GPIO13'],['GND'],['GP14','GPIO14'],['GP15','GPIO15']],
+    right:[['VBUS'],['VSYS'],['GND'],['3V3_EN','3V3EN'],['3V3','3.3V','3V3OUT'],
+           ['ADC_VREF','VREF'],['GP28','GPIO28','A2'],['GND','AGND'],['GP27','GPIO27','A1'],
+           ['GP26','GPIO26','A0'],['RUN'],['GP22','GPIO22'],['GND'],['GP21','GPIO21'],
+           ['GP20','GPIO20'],['GP19','GPIO19','MOSI'],['GP18','GPIO18','SCK'],['GND'],
+           ['GP17','GPIO17'],['GP16','GPIO16','MISO']] },
+
+  { id:'rpi', name:'Raspberry Pi (40-pin header)',
+    match:['raspberrypi','rpi','raspberrypi5','raspberrypi4','raspberrypi4b','raspberrypi3',
+           'raspberrypi3b','raspberrypi3bplus','raspberrypizero','raspberrypizerow',
+           'raspberrypizero2','raspberrypizero2w','raspberrypi40pinheader','raspberrypi40pin','raspberrypigpio'],
+    left:[['3V3','3.3V'],['GPIO2','SDA','BCM2'],['GPIO3','SCL','BCM3'],['GPIO4','GPCLK0'],['GND'],
+          ['GPIO17'],['GPIO27'],['GPIO22'],['3V3'],['GPIO10','MOSI'],['GPIO9','MISO'],
+          ['GPIO11','SCLK','SCK'],['GND'],['ID_SD','GPIO0'],['GPIO5'],['GPIO6'],['GPIO13'],
+          ['GPIO19'],['GPIO26'],['GND']],
+    right:[['5V'],['5V'],['GND'],['GPIO14','TXD','TX'],['GPIO15','RXD','RX'],['GPIO18','PCMCLK'],
+           ['GND'],['GPIO23'],['GPIO24'],['GND'],['GPIO25'],['GPIO8','CE0'],['GPIO7','CE1'],
+           ['ID_SC','GPIO1'],['GND'],['GPIO12'],['GND'],['GPIO16'],['GPIO20'],['GPIO21']] },
+
+  { id:'esp32-devkit-v1', name:'ESP32 DevKit V1',
+    match:['esp32devkitv1','esp32devkit','doitesp32devkitv1','esp32doitdevkitv1',
+           'esp32devkitv130pin','esp32devboard','esp32devmodule'],
+    left:[['EN','RST'],['VP','GPIO36','IO36','SVP'],['VN','GPIO39','IO39','SVN'],
+          ['D34','GPIO34','IO34'],['D35','GPIO35','IO35'],['D32','GPIO32','IO32'],
+          ['D33','GPIO33','IO33'],['D25','GPIO25','IO25','DAC1'],['D26','GPIO26','IO26','DAC2'],
+          ['D27','GPIO27','IO27'],['D14','GPIO14','IO14'],['D12','GPIO12','IO12'],
+          ['D13','GPIO13','IO13'],['GND'],['VIN','5V']],
+    right:[['D23','GPIO23','IO23','MOSI'],['D22','GPIO22','IO22','SCL'],['TX0','GPIO1','TX'],
+           ['RX0','GPIO3','RX'],['D21','GPIO21','IO21','SDA'],['D19','GPIO19','IO19','MISO'],
+           ['D18','GPIO18','IO18','SCK'],['D5','GPIO5','IO5','SS'],['TX2','GPIO17','IO17'],
+           ['RX2','GPIO16','IO16'],['D4','GPIO4','IO4'],['D2','GPIO2','IO2'],
+           ['D15','GPIO15','IO15'],['GND'],['3V3','3.3V']] },
+
+  { id:'nodemcu', name:'NodeMCU ESP8266',
+    match:['nodemcu','nodemcuv2','nodemcuv3','nodemcuesp8266','esp8266nodemcu','esp8266'],
+    left:[['A0','ADC0'],['RSV'],['RSV'],['SD3','GPIO10'],['SD2','GPIO9'],['SD1'],['CMD'],
+          ['SD0'],['CLK'],['GND'],['3V3','3.3V'],['EN'],['RST'],['GND'],['VIN','5V']],
+    right:[['D0','GPIO16'],['D1','GPIO5','SCL'],['D2','GPIO4','SDA'],['D3','GPIO0'],
+           ['D4','GPIO2'],['3V3'],['GND'],['D5','GPIO14','SCK'],['D6','GPIO12','MISO'],
+           ['D7','GPIO13','MOSI'],['D8','GPIO15'],['RX','GPIO3'],['TX','GPIO1'],['GND'],['3V3']] },
+
+  { id:'d1-mini', name:'Wemos D1 Mini',
+    match:['d1mini','wemosd1mini','lolind1mini','wemosd1minipro','d1minipro'],
+    left:[['RST'],['A0','ADC0'],['D0','GPIO16'],['D5','GPIO14','SCK'],['D6','GPIO12','MISO'],
+          ['D7','GPIO13','MOSI'],['D8','GPIO15','SS'],['3V3','3.3V']],
+    right:[['TX','GPIO1'],['RX','GPIO3'],['D1','GPIO5','SCL'],['D2','GPIO4','SDA'],
+           ['D3','GPIO0'],['D4','GPIO2','LED'],['GND'],['5V']] },
+
+  { id:'uno', name:'Arduino Uno',
+    match:['uno','arduinouno','arduinounor3','unor3','arduinounor4','unor4',
+           'arduinounor4wifi','arduinounor4minima'],
+    left:[['IOREF'],['RESET','RST'],['3V3','3.3V'],['5V'],['GND'],['GND'],['VIN'],
+          ['A0'],['A1'],['A2'],['A3'],['A4'],['A5']],
+    right:[['SCL'],['SDA'],['AREF'],['GND'],['13','D13','SCK'],['12','D12','MISO'],
+           ['11','D11','MOSI'],['10','D10','SS'],['9','D9'],['8','D8'],['7','D7'],['6','D6'],
+           ['5','D5'],['4','D4'],['3','D3'],['2','D2'],['1','D1','TX'],['0','D0','RX']] },
+
+  { id:'nano', name:'Arduino Nano',
+    match:['nano','arduinonano','arduinonanov3','nanov3','arduinonanoclassic'],
+    left:[['D13','13','SCK'],['3V3','3.3V'],['AREF'],['A0'],['A1'],['A2'],['A3'],
+          ['A4','SDA'],['A5','SCL'],['A6'],['A7'],['5V'],['RST'],['GND'],['VIN']],
+    right:[['D12','12','MISO'],['D11','11','MOSI'],['D10','10','SS'],['D9','9'],['D8','8'],
+           ['D7','7'],['D6','6'],['D5','5'],['D4','4'],['D3','3'],['D2','2'],['GND'],['RST'],
+           ['RX0','D0','0','RX'],['TX1','D1','1','TX']] },
+
+  { id:'pro-micro', name:'Pro Micro',
+    match:['promicro','arduinopromicro','sparkfunpromicro','promicro32u4','atmega32u4promicro'],
+    left:[['TXO','TX','D1'],['RXI','RX','D0'],['GND'],['GND'],['2','D2','SDA'],['3','D3','SCL'],
+          ['4','D4','A6'],['5','D5'],['6','D6','A7'],['7','D7'],['8','D8','A8'],['9','D9','A9']],
+    right:[['RAW','VIN'],['GND'],['RST','RESET'],['VCC'],['A3'],['A2'],['A1'],['A0'],
+           ['15','D15','SCK'],['14','D14','MISO'],['16','D16','MOSI'],['10','D10','A10']] },
+
+  { id:'esp32c3-supermini', name:'ESP32-C3 SuperMini',
+    match:['esp32c3supermini','c3supermini','supermini','esp32c3mini','superminiesp32c3'],
+    left:[['5V'],['GND'],['3V3','3.3V'],['GPIO4','IO4','4','A4','SCK'],['GPIO3','IO3','3','A3'],
+          ['GPIO2','IO2','2','A2'],['GPIO1','IO1','1','A1'],['GPIO0','IO0','0','A0']],
+    right:[['GPIO5','IO5','5','A5','MISO'],['GPIO6','IO6','6','MOSI'],['GPIO7','IO7','7','SS'],
+           ['GPIO8','IO8','8','SDA'],['GPIO9','IO9','9','SCL'],['GPIO10','IO10','10'],
+           ['GPIO20','IO20','20','RX'],['GPIO21','IO21','21','TX']] },
+
+  /* --- Stepper driver modules (StepStick / Pololu form factor).
+     Pin-compatible by design; STEP/DIR/EN/coils/power sit in the same spots.
+     Clones vary on the config-pin silkscreen — verify against your board. --- */
+
+  { id:'a4988', name:'A4988 Driver',
+    match:['a4988','a4988stepstick','pololua4988','stepsticka4988','a4988carrier','a4988driver'],
+    left:[['EN','ENABLE'],['MS1'],['MS2'],['MS3'],['RESET','RST'],['SLEEP','SLP'],['STEP','STP'],['DIR']],
+    right:[['VMOT','VM','VS'],['GND','GND_MOT','PGND'],['2B','B2'],['2A','B1'],
+           ['1A','A1'],['1B','A2'],['VDD','VIO','VCC','LOGIC'],['GND','GND_LOGIC','DGND']] },
+
+  { id:'tmc2208', name:'TMC2208 Driver',
+    match:['tmc2208','tmc2208stepstick','silentstepsticktmc2208','bigtreetechtmc2208',
+           'btttmc2208','fysetctmc2208','tmc2208v3','tmc2208driver'],
+    left:[['EN','ENABLE'],['MS1'],['MS2'],['PDN','PDN_UART','UART'],['CLK'],
+          ['GND','GND_LOGIC','DGND'],['STEP','STP'],['DIR']],
+    right:[['VMOT','VM','VS'],['GND','GND_MOT','PGND'],['2B','B2','OB2'],['2A','B1','OB1'],
+           ['1A','A1','OA1'],['1B','A2','OA2'],['VIO','VDD','VCC','LOGIC']] },
+
+  { id:'tmc2209', name:'TMC2209 Driver',
+    match:['tmc2209','tmc2209stepstick','silentstepsticktmc2209','bigtreetechtmc2209',
+           'btttmc2209','fysetctmc2209','tmc2209v12','tmc2209v13','tmc2209driver'],
+    left:[['EN','ENABLE'],['MS1'],['MS2'],['DIAG'],['INDEX'],['PDN','PDN_UART','UART'],
+          ['STEP','STP'],['DIR']],
+    right:[['VMOT','VM','VS'],['GND','GND_MOT','PGND'],['2B','B2','OB2'],['2A','B1','OB1'],
+           ['1A','A1','OA1'],['1B','A2','OA2'],['VIO','VDD','VCC','LOGIC']] },
+];
+
+const BOARD_NAME_LIST = '"XIAO ESP32C3", "XIAO ESP32S3", "Raspberry Pi Pico" (covers Pico W / Pico 2), "Raspberry Pi" (any 40-pin GPIO model), "ESP32 DevKit V1" (30-pin DOIT), "NodeMCU ESP8266", "Wemos D1 Mini", "Arduino Uno", "Arduino Nano", "Pro Micro", "ESP32-C3 SuperMini", "A4988 Driver", "TMC2208 Driver", "TMC2209 Driver"';
+
+const AI_PROMPT = `I use a tool called WireUp that renders wiring diagrams from a simple text format. Whenever you tell me how to wire up a circuit, ALSO output the wiring in this exact format, inside a single code block:
+
+# comment lines start with #
+part <id> "Display Name"          # one per component
+  pins: PIN1, PIN2, PIN3          # only the pins we actually use, in a sensible order
+
+<id>.<PIN> -> <id>.<PIN> [color] "optional note"    # one line per wire
+
+Rules:
+- <id> is a short lowercase token (esp32, dht22, oled). Pin names are the REAL labels printed on the board (GPIO4, VCC, SDA, D13).
+- One wire per line, joined with ->. The [color] is optional; prefer red for power, black for ground, and any of: yellow green blue orange purple brown white gray pink cyan for signals.
+- The quoted note at the end is optional — use it for important details like "needs 4.7k pull-up to 3V3".
+- KNOWN BOARDS: the tool has built-in real pinouts for these boards. If the circuit uses one, declare the part with EXACTLY one of these display names and NO pins: line — the tool draws the full physical pinout automatically:
+  ${BOARD_NAME_LIST}
+  Example: part mcu "XIAO ESP32C3"
+  Reference pins on known boards by their printed label or GPIO name (mcu.D4 and mcu.GPIO6 both work).
+- Use the board the user ACTUALLY has. If the user hasn't said exactly which microcontroller or dev board they're using, ASK them before writing any wiring — never guess or default to a generic devkit, because pin numbers differ between boards.
+- For every other part (sensors, modules, boards not in the list) declare it with a pins: line listing just the pins used.
+- Do not add any other syntax, prose, or bullet points inside the code block.
+
+Example of a complete, valid description:
+
+part xiao "XIAO ESP32C3"
+part oled "OLED 128x64 (I2C)"
+  pins: VCC, GND, SDA, SCL
+
+xiao.3V3 -> oled.VCC [red]
+xiao.GND -> oled.GND [black]
+xiao.D4 -> oled.SDA [green] "I2C data"
+xiao.D5 -> oled.SCL [yellow] "I2C clock"`;
+
+const EXAMPLE = `# WireUp example — XIAO ESP32C3 weather station
+# Known boards are drawn with their real pinout — just name them:
+#   part mcu "XIAO ESP32C3"      (no pins: line needed)
+# Click "Copy AI prompt" to teach your AI this format.
+
+part xiao "XIAO ESP32C3"
+part oled "OLED 128x64 (I2C)"
+  pins: VCC, GND, SDA, SCL
+part dht "DHT22 Sensor"
+  pins: VCC, DATA, GND
+part relay "Relay Module"
+  pins: VCC, IN, GND
+
+xiao.3V3 -> oled.VCC [red]
+xiao.GND -> oled.GND [black]
+xiao.D4 -> oled.SDA [green] "I2C data"
+xiao.D5 -> oled.SCL [yellow] "I2C clock"
+
+xiao.3V3 -> dht.VCC [red]
+xiao.GND -> dht.GND [black]
+xiao.D2 -> dht.DATA [blue] "10k pull-up to 3V3 recommended"
+
+xiao.5V -> relay.VCC [red] "relay board needs 5V"
+xiao.GND -> relay.GND [black]
+xiao.D10 -> relay.IN [orange]
+`;
+
+/* ---------------- model helpers ---------------- */
+
+function norm(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ''); }
+
+function makePart(id) {
+  return { id, name: id, pins: [], pinIndex: new Map(), declared: false, board: null };
+}
+
+function addPinTo(part, label, side, aliases, isBoard) {
+  const pin = { label, side: side || 'auto', isBoard: !!isBoard, used: 0, refName: null };
+  part.pins.push(pin);
+  [label, ...(aliases || [])].forEach(a => {
+    const k = norm(a);
+    if (!k) return;
+    if (!part.pinIndex.has(k)) part.pinIndex.set(k, []);
+    part.pinIndex.get(k).push(pin);
+  });
+  return pin;
+}
+
+function tryApplyBoard(part, extraKey) {
+  if (part.board) return;
+  const keys = [norm(part.name), norm(part.id)];
+  if (extraKey) keys.push(norm(extraKey));
+  const b = BOARDS.find(b =>
+    keys.includes(norm(b.id)) || keys.includes(norm(b.name)) || b.match.some(m => keys.includes(m)));
+  if (!b) return;
+  part.board = b;
+  const prev = part.pins;
+  part.pins = []; part.pinIndex = new Map();
+  b.left.forEach(p => addPinTo(part, p[0], 'left', p.slice(1), true));
+  b.right.forEach(p => addPinTo(part, p[0], 'right', p.slice(1), true));
+  // keep any user-declared pins the board doesn't have
+  prev.forEach(p => {
+    if (!(part.pinIndex.get(norm(p.label)) || []).length) addPinTo(part, p.label, p.side, [], false);
+  });
+  if (norm(part.name) === norm(part.id)) part.name = b.name;
+}
+
+/* ---------------- parser ---------------- */
+
+function parse(src) {
+  const parts = new Map();
+  const wires = [];
+  const errors = [];
+  let current = null;
+
+  function getPart(id) {
+    if (!parts.has(id)) {
+      const p = makePart(id);
+      parts.set(id, p);
+      tryApplyBoard(p);
+    }
+    return parts.get(id);
+  }
+
+  const WIRE_RE = /^([A-Za-z_]\w*)\.([^\s\[\]">]+)\s*(?:->|→|--|—+>?)\s*([A-Za-z_]\w*)\.([^\s\[\]">]+)\s*(?:\[([#\w.]+)\])?\s*(?:"([^"]*)")?\s*$/;
+
+  src.split('\n').forEach((raw, i) => {
+    const ln = i + 1;
+    let line = raw;
+    const hash = findCommentStart(line);
+    if (hash >= 0) line = line.slice(0, hash);
+    const t = line.trim();
+    if (!t) return;
+
+    let m;
+    if ((m = t.match(/^part\s+([A-Za-z_]\w*)\s*(?:"([^"]*)")?\s*$/i))) {
+      current = getPart(m[1]);
+      if (m[2]) current.name = m[2];
+      current.declared = true;
+      tryApplyBoard(current);
+      return;
+    }
+    if ((m = t.match(/^board\s*:\s*(.+)$/i))) {
+      if (!current) { errors.push({ ln, msg: 'board: found outside a part block' }); return; }
+      tryApplyBoard(current, m[1]);
+      if (!current.board) errors.push({ ln, msg: `unknown board "${m[1].trim()}" — using declared pins instead` });
+      return;
+    }
+    if ((m = t.match(/^(pins|left|right)\s*:\s*(.+)$/i))) {
+      if (!current) { errors.push({ ln, msg: 'pin list found outside a part block' }); return; }
+      const side = m[1].toLowerCase();
+      m[2].split(',').map(s => s.trim()).filter(Boolean).forEach(name => {
+        if (!(current.pinIndex.get(norm(name)) || []).length) {
+          addPinTo(current, name, side === 'pins' ? 'auto' : side);
+        }
+      });
+      return;
+    }
+    if ((m = WIRE_RE.exec(t))) {
+      const [, aId, aPin, bId, bPin, color, note] = m;
+      getPart(aId); getPart(bId);
+      wires.push({ a: { part: aId, pin: aPin }, b: { part: bId, pin: bPin }, color: color || null, note: note || '', ln });
+      return;
+    }
+    errors.push({ ln, msg: `couldn't understand: "${t.length > 60 ? t.slice(0, 60) + '…' : t}"` });
+  });
+
+  // resolve wire endpoints to actual pins (aliases; duplicate labels like GND spread out)
+  wires.forEach(w => {
+    [w.a, w.b].forEach(e => {
+      const part = parts.get(e.part);
+      const cands = part.pinIndex.get(norm(e.pin)) || [];
+      let pin;
+      if (cands.length) {
+        pin = cands.reduce((best, c) => c.used < best.used ? c : best, cands[0]);
+      } else {
+        pin = addPinTo(part, e.pin, 'auto');
+        if (part.board) {
+          errors.push({ ln: w.ln, msg: `"${e.pin}" isn't a pin on ${part.name} — added it anyway, check the name` });
+        }
+      }
+      pin.used++;
+      if (!pin.refName && norm(pin.label) !== norm(e.pin)) pin.refName = e.pin;
+      e.pinObj = pin;
+    });
+  });
+
+  return { parts, wires, errors };
+}
+
+function findCommentStart(line) {
+  let inQ = false, inB = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') inQ = !inQ;
+    else if (c === '[' && !inQ) inB = true;
+    else if (c === ']' && !inQ) inB = false;
+    else if (c === '#' && !inQ && !inB) return i;
+  }
+  return -1;
+}
+
+/* ---------------- colors ---------------- */
+
+function resolveColor(wire, idx) {
+  if (wire.color) {
+    const c = wire.color.toLowerCase();
+    if (NAMED_COLORS[c]) return { hex: NAMED_COLORS[c], label: c };
+    if (/^#[0-9a-f]{3,8}$/i.test(wire.color)) return { hex: wire.color, label: wire.color };
+  }
+  const names = [wire.a.pin, wire.b.pin, wire.a.pinObj && wire.a.pinObj.label, wire.b.pinObj && wire.b.pinObj.label].filter(Boolean);
+  if (names.some(n => GND_RE.test(n))) return { hex: NAMED_COLORS.black, label: 'black' };
+  if (names.some(n => POWER_RE.test(n))) return { hex: NAMED_COLORS.red, label: 'red' };
+  const hex = PALETTE[idx % PALETTE.length];
+  const label = Object.keys(NAMED_COLORS).find(k => NAMED_COLORS[k] === hex) || hex;
+  return { hex, label };
+}
+
+/* ---------------- layout ---------------- */
+
+function textW(s, size) { return s.length * size * 0.62; }
+function pinLabelW(pin) {
+  return textW(pin.label, 12.5) + (pin.refName ? textW(pin.refName, 10) + 6 : 0);
+}
+
+function layout(model) {
+  const parts = [...model.parts.values()];
+  if (!parts.length) return null;
+
+  const count = new Map(parts.map(p => [p.id, 0]));
+  model.wires.forEach(w => {
+    count.set(w.a.part, (count.get(w.a.part) || 0) + 1);
+    count.set(w.b.part, (count.get(w.b.part) || 0) + 1);
+  });
+  let hub = parts[0];
+  parts.forEach(p => { if ((count.get(p.id) || 0) > (count.get(hub.id) || 0)) hub = p; });
+
+  // hub pin sides
+  hub.pins.forEach(p => { p.resolvedSide = p.side === 'auto' ? 'right' : p.side; });
+
+  // which side of the hub does each peripheral belong on?
+  // majority of connected hub-pin sides, counting signal pins first (power rails route around)
+  const sidesAll = new Map(), sidesSig = new Map();
+  model.wires.forEach(w => {
+    [[w.a, w.b], [w.b, w.a]].forEach(([h, o]) => {
+      if (h.part !== hub.id || o.part === hub.id) return;
+      const side = h.pinObj.resolvedSide;
+      if (!sidesAll.has(o.part)) { sidesAll.set(o.part, []); sidesSig.set(o.part, []); }
+      sidesAll.get(o.part).push(side);
+      const isPwr = POWER_RE.test(h.pinObj.label) || GND_RE.test(h.pinObj.label);
+      if (!isPwr) sidesSig.get(o.part).push(side);
+    });
+  });
+  function majority(arr) {
+    if (!arr || !arr.length) return null;
+    const l = arr.filter(s => s === 'left').length;
+    return l * 2 > arr.length ? 'left' : l * 2 < arr.length ? 'right' : null;
+  }
+  const periphs = parts.filter(p => p !== hub);
+  periphs.forEach(p => {
+    p.col = majority(sidesSig.get(p.id)) || majority(sidesAll.get(p.id)) || 'right';
+    const facing = p.col === 'left' ? 'right' : 'left';
+    p.pins.forEach(pin => { pin.resolvedSide = pin.side === 'auto' ? facing : pin.side; });
+  });
+
+  // rows + measurements (left and right pins sit side by side, like a real board)
+  parts.forEach(p => {
+    let li = 0, ri = 0;
+    p.pins.forEach(pin => { pin.row = pin.resolvedSide === 'left' ? li++ : ri++; });
+    p.rows = Math.max(li, ri, 1);
+    const lMax = Math.max(0, ...p.pins.filter(x => x.resolvedSide === 'left').map(pinLabelW));
+    const rMax = Math.max(0, ...p.pins.filter(x => x.resolvedSide === 'right').map(pinLabelW));
+    const both = li > 0 && ri > 0;
+    p.w = Math.max(140, textW(p.name, 14) + 28, both ? lMax + rMax + 56 : Math.max(lMax, rMax) + 56);
+    p.h = HEADER_H + PAD_TOP + p.rows * PIN_H + PAD_BOTTOM;
+    p.pins.forEach(pin => { pin.dy = HEADER_H + PAD_TOP + pin.row * PIN_H + PIN_H / 2; });
+  });
+
+  // order each column by average connected hub-pin row (fewer crossings)
+  const conn = new Map();
+  model.wires.forEach(w => {
+    [[w.a, w.b], [w.b, w.a]].forEach(([h, o]) => {
+      if (h.part !== hub.id || o.part === hub.id) return;
+      if (!conn.has(o.part)) conn.set(o.part, []);
+      conn.get(o.part).push(h.pinObj.row);
+    });
+  });
+  const declOrder = new Map(periphs.map((p, i) => [p.id, i]));
+  function orderCol(arr) {
+    arr.sort((a, b) => {
+      const sa = conn.get(a.id), sb = conn.get(b.id);
+      const va = sa && sa.length ? sa.reduce((x, y) => x + y, 0) / sa.length : 1e9 + declOrder.get(a.id);
+      const vb = sb && sb.length ? sb.reduce((x, y) => x + y, 0) / sb.length : 1e9 + declOrder.get(b.id);
+      return va - vb;
+    });
+  }
+  const L = periphs.filter(p => p.col === 'left');
+  const R = periphs.filter(p => p.col === 'right');
+  orderCol(L); orderCol(R);
+
+  const colH = arr => arr.reduce((s, p) => s + p.h, 0) + Math.max(0, arr.length - 1) * GAP_Y;
+  const totalH = Math.max(hub.h, colH(L), colH(R));
+  const lW = L.length ? Math.max(...L.map(p => p.w)) : 0;
+  const rW = R.length ? Math.max(...R.map(p => p.w)) : 0;
+
+  const leftX = MARGIN + STUB;
+  hub.x = leftX + (L.length ? lW + GAP_X : 0);
+  hub.y = MARGIN + (totalH - hub.h) / 2;
+  let ly = MARGIN + (totalH - colH(L)) / 2;
+  L.forEach(p => { p.x = leftX + lW - p.w; p.y = ly; ly += p.h + GAP_Y; });
+  const rx = hub.x + hub.w + GAP_X;
+  let ry = MARGIN + (totalH - colH(R)) / 2;
+  R.forEach(p => { p.x = rx; p.y = ry; ry += p.h + GAP_Y; });
+
+  const width = (R.length ? rx + rW : hub.x + hub.w) + STUB + MARGIN;
+  const height = totalH + MARGIN * 2;
+  return { parts, hub, width, height };
+}
+
+/* ---------------- render ---------------- */
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function endPoint(model, e) {
+  const part = model.parts.get(e.part);
+  const pin = e.pinObj;
+  const dir = pin.resolvedSide === 'left' ? -1 : 1;
+  const x = dir < 0 ? part.x - STUB : part.x + part.w + STUB;
+  return { x, y: part.y + pin.dy, dir, part };
+}
+
+function roundedPath(pts, r) {
+  let d = `M ${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 1; i < pts.length - 1; i++) {
+    const [x0, y0] = pts[i - 1], [x1, y1] = pts[i], [x2, y2] = pts[i + 1];
+    const l1 = Math.hypot(x1 - x0, y1 - y0), l2 = Math.hypot(x2 - x1, y2 - y1);
+    const rr = Math.min(r, l1 / 2, l2 / 2);
+    if (rr < 0.5) { d += ` L ${x1} ${y1}`; continue; }
+    const ax = x1 - (x1 - x0) / l1 * rr, ay = y1 - (y1 - y0) / l1 * rr;
+    const bx = x1 + (x2 - x1) / l2 * rr, by = y1 + (y2 - y1) / l2 * rr;
+    d += ` L ${ax} ${ay} Q ${x1} ${y1} ${bx} ${by}`;
+  }
+  d += ` L ${pts[pts.length - 1][0]} ${pts[pts.length - 1][1]}`;
+  return d;
+}
+
+function renderSVG(model, lay) {
+  model.parts.forEach(p => p.pins.forEach((pin, i) => { pin.idx = i; }));
+  const bounds = { minX: 0, minY: 0, maxX: lay.width, maxY: lay.height };
+  function seePoint(x, y) {
+    bounds.minX = Math.min(bounds.minX, x - 12); bounds.minY = Math.min(bounds.minY, y - 12);
+    bounds.maxX = Math.max(bounds.maxX, x + 12); bounds.maxY = Math.max(bounds.maxY, y + 12);
+  }
+
+  // ---- wires: orthogonal routing with loom-style channels + junction dots ----
+  let wiresSvg = '';
+  const wireMeta = [];
+  const hub = lay.hub;
+  const CORNER = 7;
+
+  // classify every wire, and collect hub<->peripheral wires into two corridors
+  const corridors = { L: [], R: [] };
+  const recs = [];
+  model.wires.forEach((w, i) => {
+    if (!model.parts.has(w.a.part) || !model.parts.has(w.b.part)) return;
+    const p1 = endPoint(model, w.a), p2 = endPoint(model, w.b);
+    const away1 = p1.dir * (p2.x - p1.x) < -1;
+    const away2 = p2.dir * (p1.x - p2.x) < -1;
+    const touchesHub = w.a.part === hub.id || w.b.part === hub.id;
+    const crossesHub = !touchesHub &&
+      Math.min(p1.x, p2.x) < hub.x + hub.w && Math.max(p1.x, p2.x) > hub.x &&
+      Math.min(p1.y, p2.y) < hub.y + hub.h && Math.max(p1.y, p2.y) > hub.y;
+    const rec = { w, i, p1, p2, away1, away2, crossesHub,
+                  around: away1 || away2 || crossesHub, chx: null };
+    recs.push(rec);
+    if (!rec.around && touchesHub) {
+      const other = model.parts.get(w.a.part === hub.id ? w.b.part : w.a.part);
+      const side = other && other.col === 'left' ? 'L' : 'R';
+      rec.corridor = side;
+      corridors[side].push(rec);
+    }
+  });
+
+  // give each corridor wire its own vertical channel, ordered by mid-height
+  // Each corridor wire is a 2-bend route: it runs across at its OWN hub-pin
+  // height (those are all distinct, so the long runs never collide), then turns
+  // once into a short vertical just outside the peripheral. Those verticals are
+  // packed into collision-free slots (greedy channel assignment) so no two run
+  // on top of each other. Minimal bends + no overlap = easy to follow.
+  ['L', 'R'].forEach(side => {
+    const list = corridors[side];
+    if (!list.length) return;
+    list.forEach(r => {
+      const hubIsA = r.w.a.part === hub.id;
+      r.hubEnd = hubIsA ? r.p1 : r.p2;
+      r.perEnd = hubIsA ? r.p2 : r.p1;
+      r.vMin = Math.min(r.hubEnd.y, r.perEnd.y);
+      r.vMax = Math.max(r.hubEnd.y, r.perEnd.y);
+    });
+    list.sort((a, b) => a.vMin - b.vMin);
+    const slotEnds = [];              // slotEnds[s] = lowest free y in slot s
+    list.forEach(r => {
+      let s = 0;
+      while (s < slotEnds.length && slotEnds[s] > r.vMin - 8) s++;
+      slotEnds[s] = r.vMax;
+      r.chOff = 16 + s * 13;
+    });
+  });
+
+  // assign nesting lanes to perimeter ("around") wires: narrowest run innermost,
+  // widest on the outside, so they stack in parallel instead of overlapping
+  const aroundTop = [], aroundBot = [];
+  recs.forEach(rec => {
+    if (!rec.around) return;
+    rec.box = rec.away1 ? rec.p1.part : rec.away2 ? rec.p2.part : hub;
+    rec.top = (rec.p1.y + rec.p2.y) / 2 < rec.box.y + rec.box.h / 2;
+    rec.span = Math.abs(Math.max(rec.p1.x, rec.p2.x) - Math.min(rec.p1.x, rec.p2.x));
+    (rec.top ? aroundTop : aroundBot).push(rec);
+  });
+  [aroundTop, aroundBot].forEach(list => {
+    list.sort((a, b) => a.span - b.span);
+    list.forEach((r, k) => { r.lane = k; });
+  });
+
+  recs.forEach(rec => {
+    const { w, i, p1, p2 } = rec;
+    const c = resolveColor(w, i);
+    wireMeta.push({ w, c, i });
+    let d;
+    if (rec.around) {
+      const box = rec.box, lane = rec.lane;
+      const wrapY = rec.top ? box.y - 22 - lane * 15 : box.y + box.h + 22 + lane * 15;
+      const m = 26 + lane * 13;
+      const pts = [
+        [p1.x, p1.y], [p1.x + p1.dir * m, p1.y], [p1.x + p1.dir * m, wrapY],
+        [p2.x + p2.dir * m, wrapY], [p2.x + p2.dir * m, p2.y], [p2.x, p2.y]
+      ];
+      pts.forEach(pt => seePoint(pt[0], pt[1]));
+      d = roundedPath(pts, 8);
+    } else if (Math.abs(p1.y - p2.y) < 0.5) {
+      d = `M ${p1.x} ${p1.y} L ${p2.x} ${p2.y}`;          // straight run
+    } else if (rec.hubEnd) {
+      // 2-bend route: long run at hub-pin height, one turn just outside the peripheral
+      const he = rec.hubEnd, pe = rec.perEnd;
+      const chx = pe.x + pe.dir * rec.chOff;
+      const pts = [[he.x, he.y], [chx, he.y], [chx, pe.y], [pe.x, pe.y]];
+      pts.forEach(pt => seePoint(pt[0], pt[1]));
+      d = roundedPath(pts, CORNER);
+    } else {
+      const lo = Math.min(p1.x, p2.x), hi = Math.max(p1.x, p2.x);
+      const chx = (lo + hi) / 2 + ((i % 5) - 2) * 10;
+      const pts = [[p1.x, p1.y], [chx, p1.y], [chx, p2.y], [p2.x, p2.y]];
+      pts.forEach(pt => seePoint(pt[0], pt[1]));
+      d = roundedPath(pts, CORNER);
+    }
+
+    const tip = `${w.a.part}.${w.a.pin} → ${w.b.part}.${w.b.pin}` + (w.note ? ` — ${w.note}` : '');
+    const dot1 = w.a.pinObj.used < 2 ? `<circle cx="${p1.x}" cy="${p1.y}" r="3.2" fill="${c.hex}"/>` : '';
+    const dot2 = w.b.pinObj.used < 2 ? `<circle cx="${p2.x}" cy="${p2.y}" r="3.2" fill="${c.hex}"/>` : '';
+    wiresSvg += `<g class="wire" data-i="${i}" data-a="${esc(w.a.part)}" data-b="${esc(w.b.part)}" data-ai="${w.a.pinObj.idx}" data-bi="${w.b.pinObj.idx}">` +
+      `<path d="${d}" fill="none" stroke="#ffffff" stroke-width="7" opacity="0"/>` +
+      `<path class="w" d="${d}" fill="none" stroke="${c.hex}" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>` +
+      dot1 + dot2 + `<title>${esc(tip)}</title></g>`;
+  });
+
+  // junction dots where 2+ wires share a pin
+  let junctionsSvg = '';
+  model.parts.forEach(part => {
+    part.pins.forEach(pin => {
+      if (pin.used > 1) {
+        const dir = pin.resolvedSide === 'left' ? -1 : 1;
+        const x = dir < 0 ? part.x - STUB : part.x + part.w + STUB;
+        junctionsSvg += `<circle class="junction" data-part="${esc(part.id)}" data-pinidx="${pin.idx}" cx="${x}" cy="${part.y + pin.dy}" r="4.2" fill="#343a40"/>`;
+      }
+    });
+  });
+
+  // parts
+  let partsSvg = '';
+  lay.parts.forEach(p => {
+    partsSvg += `<g class="part" data-part="${esc(p.id)}">`;
+    partsSvg += `<rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="8" fill="#ffffff" stroke="none"/>`;
+    partsSvg += `<rect x="${p.x}" y="${p.y}" width="${p.w}" height="${HEADER_H}" rx="8" fill="#f1f3f5" stroke="none"/>`;
+    partsSvg += `<path d="M ${p.x} ${p.y + HEADER_H} H ${p.x + p.w}" stroke="#adb5bd" stroke-width="1"/>`;
+    partsSvg += `<rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="8" fill="none" stroke="#343a40" stroke-width="1.6"/>`;
+    partsSvg += `<text x="${p.x + p.w / 2}" y="${p.y + 16.5}" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#212529">${esc(p.name)}</text>`;
+    partsSvg += `<text x="${p.x + p.w / 2}" y="${p.y + 30}" text-anchor="middle" font-size="10" fill="#868e96">${esc(p.id)}</text>`;
+    let pinHits = '';
+    p.pins.forEach(pin => {
+      const y = p.y + pin.dy;
+      const dim = pin.isBoard && !pin.used;
+      const textFill = dim ? '#c2c9d0' : '#212529';
+      const stubStroke = dim ? '#dde1e5' : '#495057';
+      const stubLen = dim ? 6 : STUB;
+      const suffix = pin.refName && !dim
+        ? `<tspan font-size="10" fill="#868e96"> ${esc(pin.refName)}</tspan>` : '';
+      if (pin.resolvedSide === 'left') {
+        partsSvg += `<line x1="${p.x - stubLen}" y1="${y}" x2="${p.x}" y2="${y}" stroke="${stubStroke}" stroke-width="1.4"/>`;
+        partsSvg += `<text x="${p.x + 8}" y="${y + 4}" font-size="12.5" fill="${textFill}">${esc(pin.label)}${suffix}</text>`;
+      } else {
+        partsSvg += `<line x1="${p.x + p.w}" y1="${y}" x2="${p.x + p.w + stubLen}" y2="${y}" stroke="${stubStroke}" stroke-width="1.4"/>`;
+        partsSvg += `<text x="${p.x + p.w - 8}" y="${y + 4}" text-anchor="end" font-size="12.5" fill="${textFill}">${esc(pin.label)}${suffix}</text>`;
+      }
+      // transparent click target over the pin's stub + label (used pins only)
+      if (pin.used) {
+        const hw = Math.min(70, p.w * 0.5) + STUB;
+        const hx = pin.resolvedSide === 'left' ? p.x - STUB : p.x + p.w + STUB - hw;
+        pinHits += `<rect class="pinhit" data-part="${esc(p.id)}" data-pinidx="${pin.idx}" ` +
+          `x="${hx}" y="${y - PIN_H / 2}" width="${hw}" height="${PIN_H}" fill="transparent"/>`;
+      }
+    });
+    partsSvg += pinHits + `</g>`;
+  });
+
+  const W = Math.ceil(bounds.maxX - bounds.minX), H = Math.ceil(bounds.maxY - bounds.minY);
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="${Math.floor(bounds.minX)} ${Math.floor(bounds.minY)} ${W} ${H}" font-family="${FONT}">` +
+    `<rect x="${Math.floor(bounds.minX)}" y="${Math.floor(bounds.minY)}" width="${W}" height="${H}" fill="#ffffff"/>` +
+    wiresSvg + junctionsSvg + partsSvg + `</svg>`;
+  return { svg, wireMeta };
+}
+
+/* ---------------- table ---------------- */
+
+function renderTable(wireMeta) {
+  if (!wireMeta.length) { tableWrap.innerHTML = ''; return; }
+  let h = `<table><thead><tr><th>#</th><th>From</th><th>To</th><th>Wire</th><th>Note</th></tr></thead><tbody>`;
+  wireMeta.forEach((m, n) => {
+    const { w, c } = m;
+    h += `<tr class="wireRow" data-i="${m.i}">` +
+      `<td>${n + 1}</td>` +
+      `<td><b>${esc(w.a.part)}</b>.${esc(w.a.pin)}</td>` +
+      `<td><b>${esc(w.b.part)}</b>.${esc(w.b.pin)}</td>` +
+      `<td><span class="swatch" style="background:${c.hex}"></span>${esc(c.label)}</td>` +
+      `<td class="note">${esc(w.note)}</td></tr>`;
+  });
+  h += `</tbody></table>`;
+  tableWrap.innerHTML = h;
+}
+
+/* ---------------- app wiring ---------------- */
+
+const editor = document.getElementById('editor');
+const canvasWrap = document.getElementById('canvasWrap');
+const tableWrap = document.getElementById('tableWrap');
+const errorsEl = document.getElementById('errors');
+const statsEl = document.getElementById('stats');
+const toast = document.getElementById('toast');
+const zoomPct = document.getElementById('zoomPct');
+let lastSVG = '';
+
+/* ---- pan / zoom ("map" view) ---- */
+const view = { x: 0, y: 0, scale: 1 };
+let svgW = 0, svgH = 0, hasContent = false;
+
+function applyView() {
+  const svg = curSvg();
+  if (!svg) return;
+  svg.style.transform = `translate(${view.x}px, ${view.y}px) scale(${view.scale})`;
+  zoomPct.textContent = Math.round(view.scale * 100) + '%';
+}
+function fitView() {
+  if (!svgW || !svgH) return;
+  const cw = canvasWrap.clientWidth, ch = canvasWrap.clientHeight;
+  view.scale = Math.max(0.05, Math.min((cw - 48) / svgW, (ch - 48) / svgH, 1.5));
+  view.x = (cw - svgW * view.scale) / 2;
+  view.y = (ch - svgH * view.scale) / 2;
+  applyView();
+}
+function zoomAt(px, py, factor) {
+  const prev = view.scale;
+  const next = Math.min(Math.max(prev * factor, 0.08), 10);
+  if (next === prev) return;
+  view.x = px - (px - view.x) * (next / prev);
+  view.y = py - (py - view.y) * (next / prev);
+  view.scale = next;
+  applyView();
+}
+function curSvg() { return canvasWrap.querySelector(':scope > svg'); }
+
+/* ---- focus mode: click a component (whole part) or a single pin to spotlight ---- */
+let focus = null;   // null | { part: id, pin: null | pinIndex }
+function setFocus(part, pin) {
+  pin = (pin == null) ? null : pin;
+  if (part == null) focus = null;
+  else if (focus && focus.part === part && focus.pin === pin) focus = null;  // same target = clear
+  else focus = { part, pin };
+  applyFocus();
+}
+function applyFocus() {
+  const svg = curSvg();
+  if (!svg) return;
+  const parts = svg.querySelectorAll('g.part');
+  const wires = svg.querySelectorAll('g.wire');
+  const junctions = svg.querySelectorAll('.junction');
+  if (!focus) {
+    parts.forEach(g => g.style.opacity = '');
+    wires.forEach(g => g.style.opacity = '');
+    junctions.forEach(c => c.style.opacity = '');
+    return;
+  }
+  // a wire is "active" if it touches the focused part (part mode) or the exact pin (pin mode)
+  const active = g => focus.pin == null
+    ? (g.dataset.a === focus.part || g.dataset.b === focus.part)
+    : ((g.dataset.a === focus.part && g.dataset.ai === String(focus.pin)) ||
+       (g.dataset.b === focus.part && g.dataset.bi === String(focus.pin)));
+  const connected = new Set([focus.part]);
+  wires.forEach(g => { if (active(g)) { connected.add(g.dataset.a); connected.add(g.dataset.b); } });
+  parts.forEach(g => {
+    const pid = g.dataset.part;
+    g.style.opacity = pid === focus.part ? '1' : (connected.has(pid) ? '0.5' : '0.1');
+  });
+  wires.forEach(g => { g.style.opacity = active(g) ? '1' : '0.08'; });
+  junctions.forEach(c => {
+    const lit = focus.pin == null
+      ? c.dataset.part === focus.part
+      : (c.dataset.part === focus.part && c.dataset.pinidx === String(focus.pin));
+    c.style.opacity = lit ? '1' : '0.08';
+  });
+}
+function setCanvas(html) {
+  const old = canvasWrap.querySelector(':scope > svg, :scope > p.placeholder');
+  if (old) old.remove();
+  canvasWrap.insertAdjacentHTML('afterbegin', html);
+}
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(showToast.t);
+  showToast.t = setTimeout(() => toast.classList.remove('show'), 1800);
+}
+
+function update() {
+  const src = editor.value;
+  localStorage.setItem('wireup-src', src);
+  const model = parse(src);
+
+  errorsEl.innerHTML = model.errors
+    .map(e => `<div class="err">line ${e.ln}: ${esc(e.msg)}</div>`).join('');
+
+  const lay = layout(model);
+  if (!lay) {
+    setCanvas(`<p class="placeholder" style="color:#868e96;font-size:14px">Nothing to draw yet — paste a circuit description, or click <b>Load example</b>.</p>`);
+    tableWrap.innerHTML = '';
+    statsEl.textContent = '';
+    lastSVG = '';
+    hasContent = false;
+    return;
+  }
+  const { svg, wireMeta } = renderSVG(model, lay);
+  lastSVG = svg;
+  setCanvas(svg);
+  const svgEl = curSvg();
+  svgW = parseFloat(svgEl.getAttribute('width'));
+  svgH = parseFloat(svgEl.getAttribute('height'));
+  if (!hasContent) fitView(); else applyView();  // fit on first draw, keep view while editing
+  hasContent = true;
+  if (focus && !model.parts.has(focus.part)) focus = null;
+  applyFocus();   // re-apply focus spotlight after a re-render
+  renderTable(wireMeta);
+  statsEl.textContent = `${lay.parts.length} part${lay.parts.length === 1 ? '' : 's'} · ${wireMeta.length} wire${wireMeta.length === 1 ? '' : 's'}`;
+
+  function setHot(i, on) {
+    if (focus) return;   // focus mode owns opacity while active
+    svgEl.querySelectorAll(`.wire`).forEach(g => {
+      const mine = g.dataset.i === String(i);
+      const path = g.querySelector('.w');
+      if (on) {
+        path.setAttribute('stroke-width', mine ? '4.2' : '2.6');
+        g.setAttribute('opacity', mine ? '1' : '0.25');
+      } else {
+        path.setAttribute('stroke-width', '2.6');
+        g.setAttribute('opacity', '1');
+      }
+    });
+    tableWrap.querySelectorAll('tr.wireRow').forEach(r =>
+      r.classList.toggle('hot', on && r.dataset.i === String(i)));
+  }
+  svgEl.querySelectorAll('.wire').forEach(g => {
+    g.addEventListener('mouseenter', () => setHot(g.dataset.i, true));
+    g.addEventListener('mouseleave', () => setHot(g.dataset.i, false));
+  });
+  tableWrap.querySelectorAll('tr.wireRow').forEach(r => {
+    r.addEventListener('mouseenter', () => setHot(r.dataset.i, true));
+    r.addEventListener('mouseleave', () => setHot(r.dataset.i, false));
+  });
+}
+
+let deb;
+editor.addEventListener('input', () => { clearTimeout(deb); deb = setTimeout(update, 180); });
+
+/* buttons */
+
+document.getElementById('btnExample').addEventListener('click', () => {
+  if (editor.value.trim() && editor.value !== EXAMPLE &&
+      !confirm('Replace the current text with the example?')) return;
+  editor.value = EXAMPLE;
+  update();
+});
+
+async function copyText(text) {
+  try { await navigator.clipboard.writeText(text); return true; } catch {}
+  try {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0';
+    document.body.appendChild(ta);
+    ta.focus(); ta.select();
+    const ok = document.execCommand('copy');
+    ta.remove();
+    if (ok) return true;
+  } catch {}
+  return false;
+}
+
+document.getElementById('btnClear').addEventListener('click', () => {
+  editor.value = '';
+  update();
+  editor.focus();
+});
+
+document.getElementById('btnPrompt').addEventListener('click', async () => {
+  if (await copyText(AI_PROMPT)) {
+    showToast('AI prompt copied — paste it into any AI chat');
+  } else {
+    // clipboard blocked (e.g. sandboxed preview) — show the text pre-selected instead
+    document.getElementById('copyFallback').classList.add('open');
+    const ta = document.getElementById('copyFallbackText');
+    ta.value = AI_PROMPT;
+    ta.focus(); ta.select();
+  }
+});
+
+document.getElementById('btnSvg').addEventListener('click', () => {
+  if (!lastSVG) return showToast('Nothing to export yet');
+  const blob = new Blob([lastSVG], { type: 'image/svg+xml' });
+  downloadBlob(blob, 'wiring-diagram.svg');
+});
+
+document.getElementById('btnPng').addEventListener('click', () => {
+  if (!lastSVG) return showToast('Nothing to export yet');
+  const svgEl = curSvg();
+  const w = +svgEl.getAttribute('width'), h = +svgEl.getAttribute('height');
+  const img = new Image();
+  const url = URL.createObjectURL(new Blob([lastSVG], { type: 'image/svg+xml' }));
+  img.onload = () => {
+    const scale = 2;
+    const c = document.createElement('canvas');
+    c.width = w * scale; c.height = h * scale;
+    const ctx = c.getContext('2d');
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    URL.revokeObjectURL(url);
+    c.toBlob(b => downloadBlob(b, 'wiring-diagram.png'), 'image/png');
+  };
+  img.src = url;
+});
+
+function downloadBlob(blob, name) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
+}
+
+/* help modal */
+document.getElementById('helpSpec').textContent = AI_PROMPT.split('\n').slice(2).join('\n');
+document.getElementById('helpBoards').innerHTML =
+  BOARDS.map(b => `<li><b>${esc(b.name)}</b> <span style="color:var(--muted)">(${b.left.length + b.right.length} pins)</span></li>`).join('');
+document.getElementById('btnHelp').addEventListener('click', () => document.getElementById('help').classList.add('open'));
+document.getElementById('btnHelpClose').addEventListener('click', () => document.getElementById('help').classList.remove('open'));
+document.getElementById('help').addEventListener('click', e => {
+  if (e.target.id === 'help') document.getElementById('help').classList.remove('open');
+});
+document.getElementById('copyFallback').addEventListener('click', e => {
+  if (e.target.id === 'copyFallback') e.target.classList.remove('open');
+});
+
+/* collapse the code panel */
+(() => {
+  const btn = document.getElementById('btnPanel');
+  function setCollapsed(on) {
+    document.body.classList.toggle('codeHidden', on);
+    btn.title = on ? 'Show the code panel' : 'Hide the code panel';
+    localStorage.setItem('wireup-collapsed', on ? '1' : '');
+  }
+  btn.addEventListener('click', () => setCollapsed(!document.body.classList.contains('codeHidden')));
+  if (localStorage.getItem('wireup-collapsed') === '1') setCollapsed(true);
+})();
+
+/* resizable divider */
+(() => {
+  const bar = document.getElementById('dragbar'), left = document.getElementById('left');
+  let drag = false;
+  bar.addEventListener('mousedown', () => { drag = true; document.body.style.userSelect = 'none'; });
+  window.addEventListener('mousemove', e => { if (drag) left.style.width = Math.max(280, e.clientX) + 'px'; });
+  window.addEventListener('mouseup', () => { drag = false; document.body.style.userSelect = ''; });
+})();
+
+/* resizable / collapsible wiring table */
+(() => {
+  const bar = document.getElementById('tableDrag');
+  const right = document.getElementById('right');
+  let drag = false, lastOpenH = null;
+  function setH(px) {
+    const max = right.clientHeight * 0.75;
+    px = Math.min(Math.max(0, px), max);
+    if (px < 28) px = 0;                       // snap closed near the bottom
+    tableWrap.style.height = px + 'px';
+    if (px > 0) lastOpenH = px;
+    localStorage.setItem('wireup-tableh', String(px));
+  }
+  bar.addEventListener('mousedown', e => {
+    drag = true; document.body.style.userSelect = 'none'; e.preventDefault();
+  });
+  window.addEventListener('mousemove', e => {
+    if (drag) setH(right.getBoundingClientRect().bottom - e.clientY);
+  });
+  window.addEventListener('mouseup', () => { drag = false; document.body.style.userSelect = ''; });
+  bar.addEventListener('dblclick', () => {
+    const closed = tableWrap.clientHeight === 0;
+    setH(closed ? (lastOpenH || right.clientHeight * 0.3) : 0);
+  });
+  const saved = parseFloat(localStorage.getItem('wireup-tableh'));
+  if (!isNaN(saved)) setH(saved);
+})();
+
+/* pan / zoom interactions */
+(() => {
+  const wrap = canvasWrap;
+  wrap.addEventListener('wheel', e => {
+    e.preventDefault();
+    // scroll up = zoom in, scroll down = zoom out (toward the cursor).
+    // pinch/cmd+scroll zooms a touch faster. Panning is click-drag only.
+    const rect = wrap.getBoundingClientRect();
+    const k = (e.ctrlKey || e.metaKey) ? 0.010 : 0.006;
+    zoomAt(e.clientX - rect.left, e.clientY - rect.top, Math.exp(-e.deltaY * k));
+  }, { passive: false });
+
+  let dragging = false, sx = 0, sy = 0, ox = 0, oy = 0;
+  wrap.addEventListener('mousedown', e => {
+    if (e.button !== 0 || e.target.closest('#zoomCtl')) return;
+    dragging = true; sx = e.clientX; sy = e.clientY; ox = view.x; oy = view.y;
+    wrap.classList.add('panning'); e.preventDefault();
+  });
+  window.addEventListener('mousemove', e => {
+    if (!dragging) return;
+    view.x = ox + (e.clientX - sx); view.y = oy + (e.clientY - sy); applyView();
+  });
+  window.addEventListener('mouseup', e => {
+    const wasClick = dragging && Math.hypot(e.clientX - sx, e.clientY - sy) < 5;
+    dragging = false; wrap.classList.remove('panning');
+    if (!wasClick || e.target.closest('#zoomCtl')) return;
+    const pinHit = e.target.closest && e.target.closest('.pinhit');
+    if (pinHit) { setFocus(pinHit.dataset.part, +pinHit.dataset.pinidx); return; }  // click a pin
+    const partG = e.target.closest && e.target.closest('g.part');
+    if (partG) setFocus(partG.dataset.part);      // click a component to focus it
+    else if (wrap.contains(e.target)) setFocus(null);  // click empty space to clear
+  });
+  wrap.addEventListener('dblclick', e => { if (!e.target.closest('#zoomCtl')) fitView(); });
+  window.addEventListener('keydown', e => { if (e.key === 'Escape' && focus) setFocus(null); });
+
+  /* touch: one finger pans, two fingers pinch-zoom, a tap focuses (iPad) */
+  let tMode = null, tLast = null, tStart = null, tMoved = false, pinch = null;
+  const midInfo = ts => {
+    const a = ts[0], b = ts[1];
+    return { d: Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY),
+             cx: (a.clientX + b.clientX) / 2, cy: (a.clientY + b.clientY) / 2 };
+  };
+  wrap.addEventListener('touchstart', e => {
+    if (e.target.closest('#zoomCtl')) return;
+    if (e.touches.length === 1) {
+      tMode = 'pan'; tMoved = false;
+      const t = e.touches[0];
+      tLast = { x: t.clientX, y: t.clientY };
+      tStart = { x: t.clientX, y: t.clientY, target: e.target };
+    } else if (e.touches.length === 2) {
+      tMode = 'pinch'; pinch = midInfo(e.touches); tMoved = true;
+    }
+    e.preventDefault();
+  }, { passive: false });
+  wrap.addEventListener('touchmove', e => {
+    if (tMode === 'pan' && e.touches.length === 1) {
+      const t = e.touches[0];
+      view.x += t.clientX - tLast.x; view.y += t.clientY - tLast.y;
+      if (Math.hypot(t.clientX - tStart.x, t.clientY - tStart.y) > 6) tMoved = true;
+      tLast = { x: t.clientX, y: t.clientY }; applyView();
+    } else if (tMode === 'pinch' && e.touches.length === 2) {
+      const m = midInfo(e.touches), rect = wrap.getBoundingClientRect();
+      zoomAt(m.cx - rect.left, m.cy - rect.top, m.d / pinch.d);
+      view.x += m.cx - pinch.cx; view.y += m.cy - pinch.cy; applyView();
+      pinch = m;
+    }
+    e.preventDefault();
+  }, { passive: false });
+  wrap.addEventListener('touchend', e => {
+    if (tMode === 'pan' && !tMoved && tStart) {   // a tap = focus a part/pin, or clear
+      const tgt = document.elementFromPoint(tStart.x, tStart.y) || tStart.target;
+      const pinHit = tgt && tgt.closest && tgt.closest('.pinhit');
+      const partG = tgt && tgt.closest && tgt.closest('g.part');
+      if (pinHit) setFocus(pinHit.dataset.part, +pinHit.dataset.pinidx);
+      else if (partG) setFocus(partG.dataset.part);
+      else setFocus(null);
+    }
+    if (e.touches.length === 0) tMode = null;
+    else if (e.touches.length === 1) {
+      tMode = 'pan'; const t = e.touches[0]; tLast = { x: t.clientX, y: t.clientY };
+      tStart = { x: t.clientX, y: t.clientY, target: e.target }; tMoved = true;
+    }
+  }, { passive: false });
+
+  const centerZoom = f => zoomAt(wrap.clientWidth / 2, wrap.clientHeight / 2, f);
+  document.getElementById('zoomIn').addEventListener('click', () => centerZoom(1.25));
+  document.getElementById('zoomOut').addEventListener('click', () => centerZoom(1 / 1.25));
+  document.getElementById('zoomFit').addEventListener('click', fitView);
+})();
+
+/* init */
+editor.value = localStorage.getItem('wireup-src') || EXAMPLE;
+update();
+</script>
+</body>
+</html>
