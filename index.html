@@ -124,6 +124,33 @@
     background: var(--panel); border-radius: 10px; max-width: 640px; width: 92%;
     max-height: 84vh; overflow: auto; padding: 22px 26px; box-shadow: 0 12px 40px rgba(0,0,0,.25);
   }
+  .saveRow { display: flex; gap: 8px; margin-bottom: 12px; }
+  .saveRow input { flex: 1; font: inherit; font-size: 13.5px; padding: 7px 10px;
+    border: 1px solid var(--border); border-radius: 6px; }
+  #circList { list-style: none; margin: 0 0 16px; padding: 0; max-height: 46vh; overflow: auto;
+    border: 1px solid var(--border); border-radius: 8px; }
+  #circList:empty { display: none; }
+  #circList li { display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+    border-bottom: 1px solid #eceff2; font-size: 13.5px; }
+  #circList li:last-child { border-bottom: 0; }
+  #circList li.empty { color: var(--muted); justify-content: center; }
+  #circList .cname { flex: 1; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  #circList .cmeta { color: var(--muted); font-size: 11.5px; font-weight: 400; margin-left: 6px; }
+  #circList .cacts { display: flex; gap: 5px; }
+  #circList .cacts button { padding: 4px 9px; font-size: 12px; }
+  #syncBox { border-top: 1px solid var(--border); padding-top: 14px; }
+  .syncHint { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; line-height: 1.5; }
+  .syncLine { font-size: 13px; margin-bottom: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .syncLine code { background: #f0f3f6; padding: 3px 8px; border-radius: 5px; font-size: 12.5px; user-select: all; }
+  .syncLine input { font: inherit; font-size: 13px; padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; }
+  .syncState { font-size: 11.5px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 4px; }
+  .syncState.ok { background: #e6f4ea; color: #1e7e34; }
+  .syncState.off { background: #fdeced; color: #b02a37; }
+  .syncState.busy { background: #eef2f6; color: var(--muted); }
+  #syncInfo { font-size: 12px; margin-right: 4px; }
+  #syncInfo .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #ced4da; vertical-align: middle; margin-right: 4px; }
+  #syncInfo.ok .dot { background: #2f9e44; }
+  #syncInfo.off .dot { background: #e03131; }
   #helpBox {
     background: var(--panel); border-radius: 10px; max-width: 760px; width: 92%;
     max-height: 84vh; overflow: auto; padding: 22px 26px; box-shadow: 0 12px 40px rgba(0,0,0,.25);
@@ -156,8 +183,10 @@
   <button class="primary" id="btnPrompt" title="Copies instructions describing the input format — paste into any AI chat">Copy AI prompt</button>
   <button id="btnHelp">Format help</button>
   <button id="btnExample">Load example</button>
+  <button id="btnLibrary">My circuits</button>
   <button id="btnClear">Clear</button>
   <div class="spacer"></div>
+  <span id="syncInfo" title="Cloud sync status"></span>
   <span id="stats"></span>
   <button id="btnSvg">Export SVG</button>
   <button id="btnPng">Export PNG</button>
@@ -194,6 +223,24 @@
     <textarea id="copyFallbackText" readonly spellcheck="false"
       style="width:100%;height:220px;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;border:1px solid var(--border);border-radius:6px;padding:10px;resize:vertical"></textarea>
     <p style="text-align:right;margin-bottom:0"><button class="primary" onclick="document.getElementById('copyFallback').classList.remove('open')">Done</button></p>
+  </div>
+</div>
+
+<div id="library" class="modal">
+  <div class="modalBox">
+    <h2 style="margin-top:0;font-size:17px">My circuits</h2>
+    <div class="saveRow">
+      <input id="circName" placeholder="Name this circuit…" spellcheck="false">
+      <button id="saveCircuit" class="primary">Save current</button>
+    </div>
+    <ul id="circList"></ul>
+    <div id="syncBox">
+      <h3 style="font-size:13.5px;margin:4px 0 8px">Cloud sync <span id="syncState" class="syncState">…</span></h3>
+      <p class="syncHint">Saved circuits sync across your devices via a private code. To use this app on another device, open it there and paste this same code.</p>
+      <div class="syncLine">Your sync code: <code id="syncCode"></code> <button id="copyCode">Copy</button></div>
+      <div class="syncLine">Link this device to another: <input id="codeInput" placeholder="wireup-…" spellcheck="false"> <button id="linkCode">Link</button></div>
+    </div>
+    <p style="text-align:right;margin-bottom:0"><button id="libClose" class="primary">Done</button></p>
   </div>
 </div>
 
@@ -1287,6 +1334,154 @@ document.getElementById('copyFallback').addEventListener('click', e => {
   document.getElementById('zoomIn').addEventListener('click', () => centerZoom(1.25));
   document.getElementById('zoomOut').addEventListener('click', () => centerZoom(1 / 1.25));
   document.getElementById('zoomFit').addEventListener('click', fitView);
+})();
+
+/* ---------------- saved-circuit library + cloud sync ---------------- */
+(() => {
+  const SUPA_URL = 'https://uqmzecqljooqbkypadeu.supabase.co';
+  const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVxbXplY3Fsam9vcWJreXBhZGV1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUwNjM3MDYsImV4cCI6MjEwMDYzOTcwNn0.qX5BdQoYQ1jehcb0vPem-_2cXtOwhIz5G6189yBcJGg';
+
+  async function rpc(fn, args) {
+    const r = await fetch(`${SUPA_URL}/rest/v1/rpc/${fn}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: SUPA_KEY, Authorization: 'Bearer ' + SUPA_KEY },
+      body: JSON.stringify(args)
+    });
+    if (!r.ok) throw new Error('supabase ' + r.status);
+    const t = await r.text();
+    return t ? JSON.parse(t) : null;
+  }
+
+  let library = loadLocal();
+  function loadLocal() {
+    try { return JSON.parse(localStorage.getItem('wireup-library')) || { circuits: [], updated: 0 }; }
+    catch { return { circuits: [], updated: 0 }; }
+  }
+  function saveLocal() { localStorage.setItem('wireup-library', JSON.stringify(library)); }
+
+  function syncCode() {
+    let c = localStorage.getItem('wireup-synccode');
+    if (!c) {
+      c = 'wireup-' + Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 8);
+      localStorage.setItem('wireup-synccode', c);
+    }
+    return c;
+  }
+
+  const infoEl = document.getElementById('syncInfo');
+  const stateEl = document.getElementById('syncState');
+  function setStatus(s) {
+    const map = { ok: ['ok', '☁ synced', 'ok', 'Synced'], off: ['off', '☁ offline', 'off', 'Offline — saved on this device'],
+                  busy: ['', '☁ syncing…', 'busy', 'Syncing…'] };
+    const [cls, label, scls, stext] = map[s] || map.busy;
+    infoEl.className = cls; infoEl.innerHTML = `<span class="dot"></span>${label.replace('☁ ', '')}`;
+    if (stateEl) { stateEl.className = 'syncState ' + scls; stateEl.textContent = stext; }
+  }
+
+  let pushTimer = null;
+  function schedulePush() { clearTimeout(pushTimer); pushTimer = setTimeout(pushCloud, 700); }
+  async function pushCloud() {
+    setStatus('busy');
+    try { await rpc('wireup_save', { p_code: syncCode(), p_data: library }); setStatus('ok'); }
+    catch { setStatus('off'); }
+  }
+  async function pullCloud() {
+    setStatus('busy');
+    try {
+      const remote = await rpc('wireup_get', { p_code: syncCode() });
+      if (remote && (remote.updated || 0) > (library.updated || 0)) {
+        library = remote; saveLocal(); renderList();
+      } else if (!remote && library.circuits.length) {
+        await pushCloud(); return;
+      }
+      setStatus('ok');
+    } catch { setStatus('off'); }
+  }
+
+  /* library operations */
+  function saveCurrent() {
+    const nameEl = document.getElementById('circName');
+    let name = nameEl.value.trim();
+    const text = editor.value;
+    if (!text.trim()) { showToast('Nothing to save — the editor is empty'); return; }
+    if (!name) name = 'Circuit ' + (library.circuits.length + 1);
+    const now = Date.now();
+    const existing = library.circuits.find(c => c.name.toLowerCase() === name.toLowerCase());
+    if (existing) {
+      if (!confirm(`Update the saved circuit "${existing.name}"?`)) return;
+      existing.text = text; existing.updated = now;
+    } else {
+      library.circuits.push({ id: 'c' + now + Math.random().toString(36).slice(2, 6), name, text, updated: now });
+    }
+    library.updated = now; nameEl.value = '';
+    saveLocal(); renderList(); schedulePush();
+    showToast(`Saved "${name}"`);
+  }
+  function loadCircuit(id) {
+    const c = library.circuits.find(c => c.id === id);
+    if (!c) return;
+    editor.value = c.text; update();
+    document.getElementById('library').classList.remove('open');
+  }
+  function renameCircuit(id) {
+    const c = library.circuits.find(c => c.id === id); if (!c) return;
+    const n = prompt('Rename circuit', c.name); if (n === null) return;
+    c.name = n.trim() || c.name; c.updated = library.updated = Date.now();
+    saveLocal(); renderList(); schedulePush();
+  }
+  function deleteCircuit(id) {
+    const c = library.circuits.find(c => c.id === id); if (!c) return;
+    if (!confirm(`Delete "${c.name}"? This can't be undone.`)) return;
+    library.circuits = library.circuits.filter(c => c.id !== id);
+    library.updated = Date.now();
+    saveLocal(); renderList(); schedulePush();
+  }
+
+  function renderList() {
+    const ul = document.getElementById('circList');
+    const code = document.getElementById('syncCode');
+    if (code) code.textContent = syncCode();
+    if (!library.circuits.length) { ul.innerHTML = '<li class="empty">No saved circuits yet — name one above and hit Save.</li>'; return; }
+    ul.innerHTML = library.circuits.slice().sort((a, b) => b.updated - a.updated).map(c => {
+      const when = new Date(c.updated).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      return `<li data-id="${c.id}"><span class="cname">${esc(c.name)}<span class="cmeta">${when}</span></span>` +
+        `<span class="cacts"><button data-act="load">Load</button>` +
+        `<button data-act="rename">Rename</button><button data-act="del">Delete</button></span></li>`;
+    }).join('');
+  }
+
+  /* wiring */
+  const modal = document.getElementById('library');
+  document.getElementById('btnLibrary').addEventListener('click', () => { renderList(); modal.classList.add('open'); });
+  document.getElementById('libClose').addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', e => { if (e.target.id === 'library') modal.classList.remove('open'); });
+  document.getElementById('saveCircuit').addEventListener('click', saveCurrent);
+  document.getElementById('circName').addEventListener('keydown', e => { if (e.key === 'Enter') saveCurrent(); });
+  document.getElementById('circList').addEventListener('click', e => {
+    const btn = e.target.closest('button[data-act]'); if (!btn) return;
+    const id = btn.closest('li').dataset.id;
+    ({ load: loadCircuit, rename: renameCircuit, del: deleteCircuit })[btn.dataset.act](id);
+  });
+  document.getElementById('copyCode').addEventListener('click', async () => {
+    if (await copyText(syncCode())) showToast('Sync code copied'); else prompt('Your sync code:', syncCode());
+  });
+  document.getElementById('linkCode').addEventListener('click', async () => {
+    const v = document.getElementById('codeInput').value.trim();
+    if (!v) return;
+    if (library.circuits.length && !confirm('Linking will replace this device\'s saved circuits with the ones from that code. Continue?')) return;
+    localStorage.setItem('wireup-synccode', v);
+    document.getElementById('codeInput').value = '';
+    library = { circuits: [], updated: 0 };   // force adopt remote
+    await pullCloud(); renderList();
+    showToast('Linked — circuits synced');
+  });
+
+  // sync on load and whenever the tab regains focus (catches other-device edits)
+  setStatus('busy');
+  pullCloud();
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) pullCloud(); });
+  window.addEventListener('online', pullCloud);
+  window.addEventListener('offline', () => setStatus('off'));
 })();
 
 /* init */
